@@ -69,6 +69,16 @@ const rebels = [
   "R2D2_LEGENDARY",
 ];
 
+const empire = [
+  "Empire",
+  "VADER",
+  "EMPERORPALPATINE",
+  "GRANDADMIRALTHRAWN",
+  "SHORETROOPER",
+];
+
+const sith = ["Sith", "DARTHTRAYA", "DARTHSION", "DARTHNIHILUS"];
+
 export default [
   galacticRepublic,
   sithEmpire,
@@ -77,4 +87,6 @@ export default [
   clones,
   sepDroids,
   rebels,
+  empire,
+  sith,
 ];

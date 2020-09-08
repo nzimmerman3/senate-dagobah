@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./css/App.css";
 
-import Player from "./components/Player";
+// import Player from "./components/Player";
 import Teams from "./components/Teams";
 import Home from "./components/Home";
 
 function App() {
-  const [players, setPlayers] = useState([]);
+  // const [players, setPlayers] = useState([]);
   const [ally, setAlly] = useState("");
   const [ready, setReady] = useState(false);
-
-  const isValid = () => {
-    //TODO
-    return ally !== 0;
-  };
 
   return (
     <div>
