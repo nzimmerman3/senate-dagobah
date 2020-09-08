@@ -1,4 +1,5 @@
 import React from "react";
+import UnitInfo from "./UnitInfo";
 
 function TeamInfo({ team, teamName }) {
   const totalPower = team.reduce((prev, unit) => {
@@ -7,18 +8,13 @@ function TeamInfo({ team, teamName }) {
 
   return (
     <div>
-      <h3>
-        {teamName}:{totalPower}
-      </h3>
+      <h3>{teamName}</h3>
+      <h4>
+        {/* https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript */}
+        Power: {totalPower.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+      </h4>
       {team.map((unit) => {
-        const id = unit.data.base_id;
-        const name = unit.data.name;
-        const power = unit.data.power;
-        return (
-          <p key={id}>
-            {name}:{power}
-          </p>
-        );
+        return <UnitInfo unit={unit} />;
       })}
     </div>
   );

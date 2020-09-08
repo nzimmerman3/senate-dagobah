@@ -4,10 +4,77 @@ const galacticRepublic = [
   "PADMEAMIDALA",
   "GENERALKENOBI",
   "AHSOKATANO",
+  "C3POLEGENDARY",
+  "BARRISSOFFEE",
+  "GRANDMASTERYODA",
 ];
 
-const sithEmpire = ["Sith Empire", "DARTHREVAN", "BASTILASHANDARK"];
+const sithEmpire = [
+  "Sith Empire",
+  "DARTHREVAN",
+  "BASTILASHANDARK",
+  "DARTHMALAK",
+  "SITHMARAUDER",
+  "SITHTROOPER",
+];
 
-// export const jediRevan = [];
+const jediRevan = [
+  "Jedi",
+  "JEDIKNIGHTREVAN",
+  "GRANDMASTERYODA",
+  "BASTILASHAN",
+  "JOLEEBINDO",
+  "HERMITYODA",
+  "GENERALKENOBI",
+];
 
-export default [galacticRepublic, sithEmpire];
+const geonosians = [
+  "Geonosians",
+  "GEONOSIANSOLDIER",
+  "SUNFAC",
+  "POGGLETHELESSER",
+  "GEONOSIANBROODALPHA",
+  "GEONOSIANSPY",
+];
+
+const clones = [
+  "Clones",
+  "GENERALSKYWALKER",
+  "SHAAKTI",
+  "CT5555",
+  "CT7567",
+  "ARCTROOPER501ST",
+  "CT210408",
+  "CLONESERGEANTPHASEI",
+];
+
+const sepDroids = [
+  "Separtist Droids",
+  "GRIEVOUS",
+  "B1BATTLEDROIDV2",
+  "B2SUPERBATTLEDROID",
+  "MAGNAGUARD",
+  "DROIDEKA",
+  "BB8",
+  "WATTAMBOR",
+];
+
+const rebels = [
+  "Rebels",
+  "COMMANDERLUKESKYWALKER",
+  "HANSOLO",
+  "CHEWBACCALEGENDARY",
+  "C3POCHEWBACCA",
+  "C3POLEGENDARY",
+  "R2D2_LEGENDARY",
+];
+
+export default [
+  galacticRepublic,
+  sithEmpire,
+  jediRevan,
+  geonosians,
+  clones,
+  sepDroids,
+  rebels,
+];
