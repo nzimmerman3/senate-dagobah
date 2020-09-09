@@ -1,5 +1,6 @@
 import React from "react";
 import UnitInfo from "./UnitInfo";
+import { Accordion, Card, Button, Row, Col } from "react-bootstrap";
 
 function TeamInfo({ team, teamName }) {
   team.sort(function (a, b) {
@@ -11,21 +12,52 @@ function TeamInfo({ team, teamName }) {
   }, 0);
 
   const avgPower = Math.round(totalPower / reducedTeam.length);
-
+  console.log(teamName);
   return (
-    <div>
-      <h3>{teamName}</h3>
-      <h4>
-        {/* https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript */}
-        Power: {totalPower.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-      </h4>
-      <h4>
-        Avg Power: {avgPower.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-      </h4>
-      {reducedTeam.map((unit) => {
-        return <UnitInfo unit={unit} />;
-      })}
-    </div>
+    <Accordion className="team-display">
+      <Card>
+        <Card.Header>
+          <Accordion.Toggle as={Button} variant="link" eventKey="0">
+            <Row>
+              <Col>
+                <h3>{teamName}</h3>
+              </Col>
+              <Col>
+                {" "}
+                <h4>
+                  {/* https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript */}
+                  Power:{" "}
+                  {totalPower.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                </h4>
+                <h4>
+                  Avg Power:{" "}
+                  {avgPower.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                </h4>
+              </Col>
+              <Col>
+                {reducedTeam.length >= 1 ? (
+                  <img
+                    src={
+                      "https://swgoh.gg/game-asset/u/" +
+                      reducedTeam[0].data.base_id
+                    }
+                  ></img>
+                ) : (
+                  <div></div>
+                )}
+              </Col>
+            </Row>
+          </Accordion.Toggle>
+        </Card.Header>
+        <Accordion.Collapse eventKey="0">
+          <Card.Body>
+            {reducedTeam.map((unit) => {
+              return <UnitInfo unit={unit} />;
+            })}
+          </Card.Body>
+        </Accordion.Collapse>
+      </Card>
+    </Accordion>
   );
 }
 

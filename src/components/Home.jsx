@@ -8,7 +8,6 @@ function Home({ ally, setAlly, setReady, ready }) {
 
   return (
     <div>
-      <h1>146523987</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Ally Code:
@@ -20,6 +19,16 @@ function Home({ ally, setAlly, setReady, ready }) {
         </label>
         <input type="submit" value="Submit"></input>
       </form>
+      <div className="attribute" style={{ position: "absolute", bottom: "0" }}>
+        Icons made by{" "}
+        <a href="https://www.flaticon.com/authors/nhor-phai" title="Nhor Phai">
+          Nhor Phai
+        </a>{" "}
+        from{" "}
+        <a href="https://www.flaticon.com/" title="Flaticon">
+          www.flaticon.com
+        </a>
+      </div>
     </div>
   );
 }

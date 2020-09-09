@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./css/App.css";
 
 // import Player from "./components/Player";
-import Teams from "./components/Teams";
+import TeamsPage from "./components/TeamsPage";
 import Home from "./components/Home";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
   return (
     <div>
       {ready ? (
-        <Teams ally={ally} />
+        <TeamsPage ally={ally} />
       ) : (
         <Home ally={ally} setAlly={setAlly} setReady={setReady} ready={ready} />
       )}
