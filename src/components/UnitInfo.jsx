@@ -1,4 +1,5 @@
 import React from "react";
+import { Row, Col } from "react-bootstrap";
 
 function UnitInfo({ unit }) {
   const id = unit.data.base_id;
@@ -7,9 +8,20 @@ function UnitInfo({ unit }) {
   const speed = unit.data.stats[5];
   return (
     <div>
-      <h5>{name}</h5>
-      <p>Power: {power.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
-      <p>Speed: {speed}</p>
+      <Row className="unit-info">
+        <Col>
+          {" "}
+          <h5>{name}</h5>
+        </Col>
+        <Col>
+          {" "}
+          <p>Power: {power.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+        </Col>
+        <Col>
+          {" "}
+          <p>Speed: {speed}</p>
+        </Col>
+      </Row>
     </div>
   );
 }

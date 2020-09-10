@@ -7,7 +7,6 @@ import teams from "../teams";
 
 function TeamsPage({ ally }) {
   const [units, setUnits] = useState([]);
-  // const [teamNames, setTeamNames] = useState(teams);
   let teamNames = [];
 
   const save = (jsonData) => {
@@ -22,10 +21,10 @@ function TeamsPage({ ally }) {
 
   useEffect(() => {
     async function fetch() {
-      // const response = await axios.get(request.fetchPlayer(ally));
+      const response = await axios.get(request.fetchPlayer(ally));
       // save(response);
-      const response = data;
-      console.log(response);
+      // const response = data;
+      // console.log(response);
       setUnits(response.data.units);
     }
     fetch();
@@ -42,12 +41,12 @@ function TeamsPage({ ally }) {
         });
       // .push(team[0]);
       // teamNames.push(team[0]);
-      return matchingUnits;
+      return { team: matchingUnits, name: team[0] };
     })
     //Sort teams by power of best character
     .sort(function (a, b) {
-      if (a.length > 0 && b.length > 0) {
-        return b[0].data.power - a[0].data.power;
+      if (a.team.length > 0 && b.team.length > 0) {
+        return b.team[0].data.power - a.team[0].data.power;
       } else {
         return true;
       }
@@ -64,8 +63,8 @@ function TeamsPage({ ally }) {
         return <TeamInfo team={matchingUnits} teamName={team[0]} />;
       })}
       ; */}
-      {matchingUnitsArray.map((team, index) => {
-        return <TeamInfo team={team} teamName={teamNames[index]} />;
+      {matchingUnitsArray.map(({ team, name }) => {
+        return <TeamInfo key={name} team={team} teamName={name} />;
       })}
     </div>
   );

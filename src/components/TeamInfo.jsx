@@ -20,6 +20,18 @@ function TeamInfo({ team, teamName }) {
           <Accordion.Toggle as={Button} variant="link" eventKey="0">
             <Row>
               <Col>
+                {reducedTeam.length >= 1 ? (
+                  <img
+                    src={
+                      "https://swgoh.gg/game-asset/u/" +
+                      reducedTeam[0].data.base_id
+                    }
+                  ></img>
+                ) : (
+                  <div></div>
+                )}
+              </Col>
+              <Col>
                 <h3>{teamName}</h3>
               </Col>
               <Col>
@@ -34,25 +46,13 @@ function TeamInfo({ team, teamName }) {
                   {avgPower.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                 </h4>
               </Col>
-              <Col>
-                {reducedTeam.length >= 1 ? (
-                  <img
-                    src={
-                      "https://swgoh.gg/game-asset/u/" +
-                      reducedTeam[0].data.base_id
-                    }
-                  ></img>
-                ) : (
-                  <div></div>
-                )}
-              </Col>
             </Row>
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="0">
           <Card.Body>
             {reducedTeam.map((unit) => {
-              return <UnitInfo unit={unit} />;
+              return <UnitInfo key={unit.data.base_id} unit={unit} />;
             })}
           </Card.Body>
         </Accordion.Collapse>
