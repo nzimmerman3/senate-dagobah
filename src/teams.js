@@ -79,6 +79,63 @@ const empire = [
 
 const sith = ["Sith", "DARTHTRAYA", "DARTHSION", "DARTHNIHILUS"];
 
+const nightsisters = [
+  "Nightsisters",
+  "MOTHERTALZIN",
+  "ASAJVENTRESS",
+  "NIGHTSISTERZOMBIE",
+  "NIGHTSISTERSPIRIT",
+  "DAKA",
+  "TALIA",
+];
+
+const firstOrder = [
+  "First Order",
+  "KYLOREN",
+  "KYLORENUNMASKED",
+  "FIRSTORDEREXECUTIONER",
+  "FOSITHTROOPER",
+  "GENERALHUX",
+  "FIRSTORDEROFFICERMALE",
+  "PHASMA",
+];
+
+const resistance = [
+  "Resistance",
+  "REYJEDITRAINING",
+  "EPIXFINN",
+  "EPIXPOE",
+  "BB8",
+  "R2D2_LEGENDARY",
+  "FINN",
+  "AMILYNHOLDO",
+  "C3POLEGENDARY",
+  "REY",
+  "RESISTANCETROOPER",
+];
+
+const bountyHunters = [
+  "Bounty Hunters",
+  "BOSSK",
+  "JANGOFETT",
+  "BOBAFETT",
+  "DENGAR",
+  "GREEFKARGA",
+  "THEMANDALORIAN",
+  "ZAMWESELL",
+  "CADBANE",
+  "GREEDO",
+  "EMBO",
+];
+
+const separtist = [
+  "Separtists",
+  "NUTEGUNRAY",
+  "COUNTDOOKU",
+  "WATTAMBOR",
+  "JANGOFETT",
+];
+
 export default [
   galacticRepublic,
   sithEmpire,
@@ -89,4 +146,9 @@ export default [
   rebels,
   empire,
   sith,
+  nightsisters,
+  firstOrder,
+  resistance,
+  bountyHunters,
+  separtist,
 ];

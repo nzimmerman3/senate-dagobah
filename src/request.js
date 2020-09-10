@@ -1,5 +1,5 @@
-const GUILD_ID = "68989";
-const ALLY = "146523987";
+// let GUILD_ID = "68989";
+// let ALLY = "146523987";
 
 const fetchGuild = (guildID) => {
   return `/guild/${guildID}/`;
@@ -13,7 +13,7 @@ const fetchApi = () => {
   return `/`;
 };
 
-const fetchPlayer = (allyID = ALLY) => {
+const fetchPlayer = (allyID) => {
   return `/player/${allyID}/`;
 };
 

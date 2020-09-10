@@ -26,6 +26,7 @@ function TeamInfo({ team, teamName }) {
                       "https://swgoh.gg/game-asset/u/" +
                       reducedTeam[0].data.base_id
                     }
+                    alt="unit"
                   ></img>
                 ) : (
                   <div></div>

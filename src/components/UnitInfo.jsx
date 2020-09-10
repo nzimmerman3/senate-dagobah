@@ -2,7 +2,6 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 
 function UnitInfo({ unit }) {
-  const id = unit.data.base_id;
   const name = unit.data.name;
   const power = unit.data.power;
   const speed = unit.data.stats[5];
