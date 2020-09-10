@@ -12,7 +12,6 @@ function TeamInfo({ team, teamName }) {
   }, 0);
 
   const avgPower = Math.round(totalPower / reducedTeam.length);
-  console.log(teamName);
   return (
     <Accordion className="team-display">
       <Card>

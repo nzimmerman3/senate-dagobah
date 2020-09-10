@@ -1,34 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
+import history from "../history";
+import Attribution from "./Attribution";
 
-function Home({ ally, setAlly, setReady, ready }) {
+const validate = (ally) => {
+  return ally.length === 9 && !isNaN(ally);
+};
+
+function Home() {
+  const [ally, setAlly] = useState("");
+  const [invalid, setInvalid] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    setReady(true);
+    if (!validate(ally)) {
+      setInvalid(true);
+      return;
+    }
+    history.push({ pathname: "/results", state: { ally } });
   };
 
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
+      <h2>Roster Lookup</h2>
+      <br />
       <form onSubmit={handleSubmit}>
         <label>
-          Ally Code:
+          Ally Code:{" "}
           <input
             type="text"
             value={ally}
             onChange={(e) => setAlly(e.target.value)}
           ></input>
         </label>
-        <input type="submit" value="Submit"></input>
+        <div>
+          {invalid ? <p>Invalid ally code</p> : <br />}
+
+          <input type="submit" value="Search" className="btn btn-dark"></input>
+        </div>
       </form>
-      <div className="attribute" style={{ position: "absolute", bottom: "0" }}>
-        Icons made by{" "}
-        <a href="https://www.flaticon.com/authors/nhor-phai" title="Nhor Phai">
-          Nhor Phai
-        </a>{" "}
-        from{" "}
-        <a href="https://www.flaticon.com/" title="Flaticon">
-          www.flaticon.com
-        </a>
-      </div>
+      <Attribution />
     </div>
   );
 }

@@ -1,32 +1,30 @@
 import React, { useState, useEffect } from "react";
-// import data from "../player-data.json";
 import axios from "../axios";
 import request from "../request";
 import TeamInfo from "./TeamInfo";
 import teams from "../teams";
+import history from "../history";
+import Loading from "./Loading";
 
-function TeamsPage({ ally }) {
+function TeamsPage(props) {
   const [units, setUnits] = useState([]);
-
-  // const save = (jsonData) => {
-  //   const fileData = JSON.stringify(jsonData);
-  //   const blob = new Blob([fileData], { type: "text/plain" });
-  //   const url = URL.createObjectURL(blob);
-  //   const link = document.createElement("a");
-  //   link.download = "filename.json";
-  //   link.href = url;
-  //   link.click();
-  // };
+  const ally = Object.is(props.location.state, undefined)
+    ? history.push("/")
+    : props.location.state.ally;
 
   useEffect(() => {
+    let mounted = true;
     async function fetch() {
-      const response = await axios.get(request.fetchPlayer(ally));
-      // save(response);
-      // const response = data;
-      // console.log(response);
-      setUnits(response.data.units);
+      try {
+        const response = await axios.get(request.fetchPlayer(ally));
+        setUnits(response.data.units);
+      } catch (err) {
+        history.push({ pathname: "/noally", state: { ally } });
+      }
     }
-    fetch();
+    if (mounted) fetch();
+
+    return () => (mounted = false);
   }, [ally]);
 
   const matchingUnitsArray = teams
@@ -38,8 +36,6 @@ function TeamsPage({ ally }) {
         .sort(function (a, b) {
           return b.data.power - a.data.power;
         });
-      // .push(team[0]);
-      // teamNames.push(team[0]);
       return { team: matchingUnits, name: team[0] };
     })
     //Sort teams by power of best character
@@ -53,13 +49,17 @@ function TeamsPage({ ally }) {
 
   return (
     <div className="teams-display">
-      {matchingUnitsArray.map(({ team, name }) => {
-        return team.length > 0 ? (
-          <TeamInfo key={name} team={team} teamName={name} />
-        ) : (
-          <div></div>
-        );
-      })}
+      {units.length === 0 ? (
+        <Loading />
+      ) : (
+        matchingUnitsArray.map(({ team, name }) => {
+          return team.length > 0 ? (
+            <TeamInfo key={name} team={team} teamName={name} />
+          ) : (
+            <div key={name}></div>
+          );
+        })
+      )}
     </div>
   );
 }

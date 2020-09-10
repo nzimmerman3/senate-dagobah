@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import "./css/App.css";
-
-// import Player from "./components/Player";
+import MyNav from "./components/MyNav";
 import TeamsPage from "./components/TeamsPage";
 import Home from "./components/Home";
+import NotFound from "./components/NotFound";
+import { Route, Switch } from "react-router-dom";
+import NoAllyPage from "./components/NoAllyPage";
 
 function App() {
-  // const [players, setPlayers] = useState([]);
-  const [ally, setAlly] = useState("");
-  const [ready, setReady] = useState(false);
-
   return (
     <div>
-      {ready ? (
-        <TeamsPage ally={ally} />
-      ) : (
-        <Home ally={ally} setAlly={setAlly} setReady={setReady} ready={ready} />
-      )}
+      <MyNav />
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/results" component={TeamsPage} />
+        <Route path="/noally" component={NoAllyPage} />
+        <Route component={NotFound} />
+      </Switch>
     </div>
   );
 }

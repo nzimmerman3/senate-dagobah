@@ -6,6 +6,7 @@
 
 .team-display {
   /* width: 300px; */
+  /* display: flex; */
   width: 100%;
   margin: 10px;
   text-align: center;
@@ -13,4 +14,16 @@
 
 button {
   width: 75%;
+}
+
+.my-nav {
+  margin-bottom: 10px;
+}
+
+.brand-nav {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.no-ally {
+  text-align: center;
 }
