@@ -54,7 +54,11 @@ function TeamsPage({ ally }) {
   return (
     <div className="teams-display">
       {matchingUnitsArray.map(({ team, name }) => {
-        return <TeamInfo key={name} team={team} teamName={name} />;
+        return team.length > 0 ? (
+          <TeamInfo key={name} team={team} teamName={name} />
+        ) : (
+          <div></div>
+        );
       })}
     </div>
   );

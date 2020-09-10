@@ -16,6 +16,7 @@ const sithEmpire = [
   "DARTHMALAK",
   "SITHMARAUDER",
   "SITHTROOPER",
+  "SITHASSASSIN",
 ];
 
 const jediRevan = [
@@ -26,6 +27,8 @@ const jediRevan = [
   "JOLEEBINDO",
   "HERMITYODA",
   "GENERALKENOBI",
+  "EZRABRIDGERS3",
+  "PLOKOON",
 ];
 
 const geonosians = [
@@ -67,6 +70,7 @@ const rebels = [
   "C3POCHEWBACCA",
   "C3POLEGENDARY",
   "R2D2_LEGENDARY",
+  "OLDBENKENOBI",
 ];
 
 const empire = [
@@ -98,6 +102,7 @@ const firstOrder = [
   "GENERALHUX",
   "FIRSTORDEROFFICERMALE",
   "PHASMA",
+  "SUPREMELEADERKYLOREN",
 ];
 
 const resistance = [
@@ -112,6 +117,7 @@ const resistance = [
   "C3POLEGENDARY",
   "REY",
   "RESISTANCETROOPER",
+  "GLREY",
 ];
 
 const bountyHunters = [
@@ -136,6 +142,40 @@ const separtist = [
   "JANGOFETT",
 ];
 
+const oldRepublic = [
+  "Old Republic",
+  "CARTHONASI",
+  "CANDEROUSORDO",
+  "JUHANI",
+  "MISSIONVAO",
+  "ZAALBAR",
+  "T3_M4",
+];
+
+const rebelFighter = [
+  "Rebel Fighters",
+  "MONMOTHMA",
+  "HOTHREBELSCOUT",
+  "BAZEMALBUS",
+  "CHIRRUTIMWE",
+  "CARADUNE",
+  "BISTAN",
+  "SCARIFREBEL",
+  "PAO",
+  "BIGGSDARKLIGHTER",
+  "WEDGEANTILLES",
+];
+
+const phoneix = [
+  "Phoneix",
+  "EZRABRIDGERS3",
+  "KANANJARRUSS3",
+  "ZEBS3",
+  "CHOPPERS3",
+  "HERASYNDULLAS3",
+  "SABINEWRENS3",
+];
+
 export default [
   galacticRepublic,
   sithEmpire,
@@ -151,4 +191,7 @@ export default [
   resistance,
   bountyHunters,
   separtist,
+  oldRepublic,
+  rebelFighter,
+  phoneix,
 ];
