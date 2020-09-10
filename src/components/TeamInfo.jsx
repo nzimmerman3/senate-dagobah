@@ -13,51 +13,64 @@ function TeamInfo({ team, teamName }) {
 
   const avgPower = Math.round(totalPower / reducedTeam.length);
   return (
-    <Accordion className="team-display">
-      <Card>
-        <Card.Header>
-          <Accordion.Toggle as={Button} variant="link" eventKey="0">
-            <Row>
-              <Col>
-                {reducedTeam.length >= 1 ? (
-                  <img
-                    src={
-                      "https://swgoh.gg/game-asset/u/" +
-                      reducedTeam[0].data.base_id
-                    }
-                    alt="unit"
-                  ></img>
-                ) : (
-                  <div></div>
-                )}
-              </Col>
-              <Col>
-                <h3>{teamName}</h3>
-              </Col>
-              <Col>
-                {" "}
-                <h4>
-                  {/* https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript */}
-                  Power:{" "}
-                  {totalPower.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                </h4>
-                <h4>
-                  Avg Power:{" "}
-                  {avgPower.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                </h4>
-              </Col>
-            </Row>
-          </Accordion.Toggle>
-        </Card.Header>
-        <Accordion.Collapse eventKey="0">
-          <Card.Body>
-            {reducedTeam.map((unit) => {
-              return <UnitInfo key={unit.data.base_id} unit={unit} />;
-            })}
-          </Card.Body>
-        </Accordion.Collapse>
-      </Card>
-    </Accordion>
+    <div className="team">
+      <Accordion className="team-display">
+        <Card style={{}}>
+          <Card.Header>
+            <Accordion.Toggle
+              as={Button}
+              variant="link"
+              eventKey="0"
+              style={{
+                paddingTop: "0px",
+                paddingBottom: "0px",
+              }}
+            >
+              <Row>
+                <Col>
+                  {reducedTeam.length >= 1 ? (
+                    <img
+                      src={
+                        "https://swgoh.gg/game-asset/u/" +
+                        reducedTeam[0].data.base_id
+                      }
+                      alt="unit"
+                      className="team-image"
+                    ></img>
+                  ) : (
+                    <div></div>
+                  )}
+                </Col>
+                <Col>
+                  <h3 className="team-title">{teamName}</h3>
+                </Col>
+                <Col>
+                  {" "}
+                  <h4 className="team-info">
+                    {/* https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript */}
+                    Power:{" "}
+                    {totalPower
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  </h4>
+                  <h4 className="team-info">
+                    Avg Power:{" "}
+                    {avgPower.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  </h4>
+                </Col>
+              </Row>
+            </Accordion.Toggle>
+          </Card.Header>
+          <Accordion.Collapse eventKey="0">
+            <Card.Body>
+              {reducedTeam.map((unit) => {
+                return <UnitInfo key={unit.data.base_id} unit={unit} />;
+              })}
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
+      </Accordion>
+    </div>
   );
 }
 
