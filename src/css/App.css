@@ -8,7 +8,9 @@
   /* width: 300px; */
   /* display: flex; */
   width: 100%;
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
   text-align: center;
 }
 
@@ -17,6 +19,14 @@
 }
 
 .team-info {
+  font-size: 0.8em;
+}
+
+.unit-info {
+  font-size: 0.6em;
+}
+
+.unit-info h5 {
   font-size: 1em;
 }
 
@@ -45,8 +55,17 @@ button {
 .card-header {
   padding-top: 0px;
   padding-bottom: 0px;
+  background-color: white;
 }
 
 .team {
-  width: 100%;
+  width: 46%;
+  margin: 2%;
+}
+
+.row {
+  align-items: center;
+  white-space: nowrap;
+  color: black;
+  /* pointer-events: none; */
 }

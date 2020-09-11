@@ -31,10 +31,10 @@ function Home() {
             value={ally}
             onChange={(e) => setAlly(e.target.value)}
           ></input>
+          {" e.g. 146523987"}
         </label>
         <div>
           {invalid ? <p>Invalid ally code</p> : <br />}
-
           <input type="submit" value="Search" className="btn btn-dark"></input>
         </div>
       </form>
