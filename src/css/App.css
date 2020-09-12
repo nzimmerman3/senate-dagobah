@@ -53,9 +53,38 @@ button {
 }
 
 .card-header {
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding: 0;
   background-color: white;
+  border-color: black;
+}
+
+.card {
+  border-color: black;
+}
+
+.card-body {
+  border-color: black;
+}
+
+.btn.btn-link {
+  padding: 0;
+  width: 100%;
+  text-decoration: none;
+}
+
+.btn.btn-link:visited {
+  text-decoration: none;
+}
+.btn.btn-link:hover {
+  text-decoration: none;
+}
+.btn.btn-link:active {
+  text-decoration: none;
+}
+
+.btn.btn-link:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .team {
@@ -68,4 +97,32 @@ button {
   white-space: nowrap;
   color: black;
   /* pointer-events: none; */
+}
+
+.unit-name {
+  text-decoration: underline;
+}
+
+.collapse.show {
+  text-decoration: none;
+}
+
+.collapse {
+  text-decoration: none;
+}
+
+.collapse.show:hover {
+  text-decoration: none;
+}
+
+.collapse:hover {
+  text-decoration: none;
+}
+
+.collapse.show:active {
+  text-decoration: none;
+}
+
+.collapse:active {
+  text-decoration: none;
 }

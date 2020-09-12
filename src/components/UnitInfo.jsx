@@ -29,51 +29,35 @@ function UnitInfo({ unit }) {
 
   return (
     <div>
-      <Row className="unit-info">
-        <Col>
+      <div className="row unit-info">
+        <div className="col-lg col-sm-12 unit-name">
           {" "}
-          <h5>{name}</h5>
-        </Col>
-        <Col>
+          <p>{name}</p>
+        </div>
+        <div className="col-lg col-sm-6">
           {" "}
           <p>
             Power:{" "}
             {stats.power.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
           </p>
-        </Col>
-        <Col>
+        </div>
+        <div className="col-lg col-sm-6">
           {" "}
           <p>Gear: {gear}</p>
-        </Col>
+        </div>
         {gear === 13 ? (
-          <Col>
+          <div className="col-lg col-sm-6">
             {" "}
             <p>Relic: {relic}</p>
-          </Col>
+          </div>
         ) : (
-          <Col></Col>
+          <div className="col-lg col-sm-6"></div>
         )}
-        <Col>
+        <div className="col-lg col-sm-6">
           {" "}
           <p>Speed: {stats.speed}</p>
-        </Col>
-        {/* <Col>
-          {" "}
-          <p>Health: {stats.health}</p>
-        </Col>
-        <Col>
-          {" "}
-          <p>Protection: {stats.protection}</p>
-        </Col>
-        <Col>
-          {" "}
-          <p>Physical Damage: {stats.pDamage}</p>
-        </Col>
-        <Col>
-          {" "}
-          <p>Special Damage: {stats.sDamage}</p>
-        </Col> */}
-      </Row>
+        </div>
+      </div>
     </div>
   );
 }
