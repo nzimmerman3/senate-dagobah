@@ -52,13 +52,19 @@ function TeamsPage(props) {
       {units.length === 0 ? (
         <Loading />
       ) : (
-        matchingUnitsArray.map(({ team, name }) => {
-          return team.length > 0 ? (
-            <TeamInfo key={name} team={team} teamName={name} />
-          ) : (
-            <div key={name}></div>
-          );
-        })
+        <div className="container-fluid">
+          <div className="row">
+            {matchingUnitsArray.map(({ team, name }) => {
+              return team.length > 0 ? (
+                <div className="col-sm-6 col-lg-4">
+                  <TeamInfo key={name} team={team} teamName={name} />
+                </div>
+              ) : (
+                <div key={name}></div>
+              );
+            })}
+          </div>
+        </div>
       )}
     </div>
   );
